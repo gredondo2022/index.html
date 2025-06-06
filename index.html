@@ -96,14 +96,34 @@
             <button onclick="redirect()">Ir</button>
         </div>
 
-        <div class="media-section">
+        <!-- ... (resto del código igual) ... -->
+<div class="media-section">
     <div class="media-title">Video de Presentación</div>
-    <!-- Cambia 'video.mp4' por la ruta de tu archivo de video real -->
-    <video id="Video de Jhovany😎❤️-20250605T001445Z-1-001.zip" src="Video de Jhovany😎❤️-20250605T001445Z-1-001.zip" controls></video>
+    <!-- Cambia 'video.mp4' por la ruta correcta de tu archivo de video -->
+    <video id="mainVideo" src="video.mp4" controls></video> <!-- CAMBIO: id y src -->
     <div class="video-controls">
         <button id="playPauseBtn">Reproducir</button>
     </div>
 </div>
+<!-- ... (resto del código igual) ... -->
+<script>
+    // ... (resto del script igual) ...
+    // Video: play/pause control
+    const video = document.getElementById('mainVideo'); // CAMBIO: id igual al HTML
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    playPauseBtn.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            playPauseBtn.textContent = 'Pausar';
+        } else {
+            video.pause();
+            playPauseBtn.textContent = 'Reproducir';
+        }
+    });
+    video.addEventListener('pause', () => playPauseBtn.textContent = 'Reproducir');
+    video.addEventListener('play', () => playPauseBtn.textContent = 'Pausar');
+    // ... (resto del script igual) ...
+</script>
 
         <div class="media-section">
             <div class="media-title">Música de Fondo</div>
